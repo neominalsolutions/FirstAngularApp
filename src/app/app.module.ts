@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // bu sayfaya başka bir klasör altındaki dosyayı çağırmak için import keyword kullanırız. using
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 // metadata
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent, TodosComponent],
@@ -16,8 +18,10 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     BrowserModule, // csr import eder.
     HttpClientModule,
     BrowserAnimationsModule, // http servislerini kullanmamızı sağlayan module
-    ButtonsModule.forRoot(), // singleton olarak servisin module tanımlanması
+    // ButtonsModule.forRoot(), // singleton olarak servisin module tanımlan
     AccordionModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    BsDropdownModule.forRoot(),
   ],
   providers: [], // modulde kullanılacak olan servisler
   bootstrap: [AppComponent], // uygulamayı appcomponente devreder.

@@ -1,36 +1,21 @@
-<!-- <form>
-    <input placeholder="Title">
-    <button (click)="AddTodo()"></button>
-</form> -->
-
-<button type="button" class="btn btn-secondary">Single Button</button>
-
-<div class="btn-group">
-  <label class="btn btn-primary" btnCheckbox tabindex="0" role="button"
-    >Left</label
-  >
-  <label class="btn btn-primary" btnCheckbox tabindex="0" role="button"
-    >Middle</label
-  >
-  <label class="btn btn-primary" btnCheckbox tabindex="0" role="button"
-    >Right</label
-  >
+<div class="container">
+  <div class="row">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Todo"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      />
+      <div class="input-group-prepend">
+        <button class="btn btn-secondary">Add</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <ul class="list-group" *ngFor="let todo of data">
+      <li class="list-group-item">{{ todo.title }}</li>
+    </ul>
+  </div>
 </div>
-<div *ngFor="let todo of data">
-  <h3>{{ todo.title }}</h3>
-</div>
-
-<accordion>
-  <accordion-group heading="Static Header">
-    This content is straight in the template.
-  </accordion-group>
-  <accordion-group heading="Another group">
-    <p>Some content</p>
-  </accordion-group>
-  <accordion-group heading="Another group">
-    <p>Some content</p>
-  </accordion-group>
-  <accordion-group heading="Another group">
-    <p>Some content</p>
-  </accordion-group>
-</accordion>
