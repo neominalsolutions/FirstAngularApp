@@ -1,5 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 
 export interface Todo {
   userId: number;
@@ -25,5 +30,26 @@ export class TodosComponent implements OnInit {
       .subscribe((res) => {
         this.data = res;
       });
+  }
+
+  editMode: boolean = false;
+  editItem: Todo = {} as Todo;
+
+  edit(id: number) {
+    this.editMode = true;
+    const editData = this.data.find((x) => x.id == id);
+    this.editItem = editData || ({} as Todo);
+  }
+
+  //#inpt olarak templete ref verdik
+  update(inpt: HTMLInputElement) {
+    this.editMode = false;
+    this.editItem.title = inpt.value;
+  }
+
+  add() {}
+
+  delete(id: number) {
+    this.editMode = false;
   }
 }
