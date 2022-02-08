@@ -1,0 +1,45 @@
+
+<!-- @Model = {{value}} -->
+<!-- interpolation ile dinamik olarak ts den gelen değeri html bağladık -->
+<h1>{{content}}</h1>
+
+
+
+<!-- <ul>
+   <li  *ngFor="let item of names">{{item.name}}</li>
+</ul> -->
+
+
+<!-- @foreach -->
+<!-- <ul *ngFor="let item of names">
+    <li>{{item.name}} {{item.surname}}</li>
+</ul> -->
+
+<!-- (click) html onclick denk gelir html event -->
+<button (click)="number = number + 1">(+)</button>
+<button (click)="number = number - 1">(-)</button>
+
+ <!-- (input)  onkeypup denk gelir.-->
+
+<input [value]="content" (input)="changeValue($event)">
+<!-- sayfada html domda eklenip çıkarılmasını sağlar -->
+<span *ngIf="content.length > 8">8 karakterden uzun metin girdiniz</span>
+<!-- hidden ile *ngIf aynı şey değildir -->
+<p [hidden]="!(content.length > 10)">10 Karakterden büyük girdiniz</p>
+
+<p>{{number}}</p>
+
+<p>{{content}}</p>
+
+
+<!-- <select (change)="selectName($event)">
+    <option *ngFor="let item of names; let i=index"> {{i}}.sıra {{item.name}}</option>
+</select> -->
+
+<p>Selected Name : {{selectedName}}</p>
+
+
+<!-- ref ile elementin değerini değiştirme -->
+
+<!-- #ile template id veriyoruz -->
+<button #btn1>Change Color </button>
